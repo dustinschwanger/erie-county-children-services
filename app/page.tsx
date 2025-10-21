@@ -35,7 +35,7 @@ export default function HomePage() {
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-white mb-4 leading-tight">
                 Protecting{' '}
-                <span className="text-primary-blue relative inline-block pb-3">
+                <span className="relative inline-block pb-3">
                   Children
                   <svg
                     className="absolute bottom-0 left-0 w-full"
@@ -53,7 +53,7 @@ export default function HomePage() {
                   </svg>
                 </span>
                 <br />
-                <span className="text-primary-green">
+                <span className="text-primary-green-light">
                   Supporting Families
                 </span>
               </h1>

@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import Card from '@/components/ui/Card'
@@ -65,7 +64,7 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/report-abuse">
+                <div>
                   <Button
                     variant="danger"
                     size="lg"
@@ -86,8 +85,8 @@ export default function HomePage() {
                     </svg>
                     Report Abuse or Neglect
                   </Button>
-                </Link>
-                <Link href="/foster-adoption">
+                </div>
+                <div>
                   <Button
                     variant="secondary"
                     size="lg"
@@ -108,7 +107,7 @@ export default function HomePage() {
                     </svg>
                     Become a Foster Parent
                   </Button>
-                </Link>
+                </div>
               </div>
           </div>
         </div>
@@ -136,8 +135,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {/* Report Abuse Card - Large & Prominent */}
-            <Link
-              href="/report-abuse"
+            <div
               className="group md:col-span-2 lg:col-span-1"
             >
               <Card
@@ -209,10 +207,10 @@ export default function HomePage() {
                   </div>
                 </div>
               </Card>
-            </Link>
+            </div>
 
             {/* Foster Parent Card */}
-            <Link href="/foster-adoption" className="group">
+            <div className="group">
               <Card
                 variant="elevated"
                 padding="lg"
@@ -281,7 +279,7 @@ export default function HomePage() {
                   </div>
                 </div>
               </Card>
-            </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -323,7 +321,7 @@ export default function HomePage() {
                 'from-orange-500 to-red-500'
               ]
               return (
-                <Link key={service.id} href={service.href} className="group">
+                <div key={service.id} className="group">
                   <Card
                     variant="elevated"
                     className={`h-full card-3d bg-white overflow-hidden stagger-${(index % 4) + 1}`}
@@ -347,7 +345,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </Card>
-                </Link>
+                </div>
               )
             })}
           </div>
@@ -382,19 +380,19 @@ export default function HomePage() {
                 </h3>
                 <ul className="space-y-4">
                   <li>
-                    <Link href="/resources/child-care" className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
+                    <div className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
                       Child Care Information
-                    </Link>
+                    </div>
                   </li>
                   <li>
-                    <Link href="/resources/financial-assistance" className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
+                    <div className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
                       Financial Assistance
-                    </Link>
+                    </div>
                   </li>
                   <li>
-                    <Link href="/resources/parenting" className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
+                    <div className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
                       Parenting Resources
-                    </Link>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -408,19 +406,19 @@ export default function HomePage() {
                 </h3>
                 <ul className="space-y-4">
                   <li>
-                    <Link href="/foster-adoption/training" className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
+                    <div className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
                       Training & Support
-                    </Link>
+                    </div>
                   </li>
                   <li>
-                    <Link href="/resources/foster-forms" className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
+                    <div className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
                       Forms & Documents
-                    </Link>
+                    </div>
                   </li>
                   <li>
-                    <Link href="/resources/portal" className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
+                    <div className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
                       Foster Parent Portal
-                    </Link>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -434,19 +432,19 @@ export default function HomePage() {
                 </h3>
                 <ul className="space-y-4">
                   <li>
-                    <Link href="/resources/reporting-guidelines" className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
+                    <div className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
                       Reporting Guidelines
-                    </Link>
+                    </div>
                   </li>
                   <li>
-                    <Link href="/resources/training" className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
+                    <div className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
                       Training Materials
-                    </Link>
+                    </div>
                   </li>
                   <li>
-                    <Link href="/resources/legal" className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
+                    <div className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
                       Legal Requirements
-                    </Link>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -460,19 +458,19 @@ export default function HomePage() {
                 </h3>
                 <ul className="space-y-4">
                   <li>
-                    <Link href="/resources/community-guide" className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
+                    <div className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
                       Resource Guide
-                    </Link>
+                    </div>
                   </li>
                   <li>
-                    <Link href="/contact/speaker" className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
+                    <div className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
                       Request a Speaker
-                    </Link>
+                    </div>
                   </li>
                   <li>
-                    <Link href="/resources/directory" className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
+                    <div className="block p-3 -mx-3 rounded-lg hover:bg-white/80 transition-all text-gray-800 font-medium">
                       Resource Directory
-                    </Link>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -509,7 +507,7 @@ export default function HomePage() {
               immediate assistance, call us now.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="tel:4196265437">
+              <div>
                 <Button
                   variant="secondary"
                   size="lg"
@@ -520,8 +518,8 @@ export default function HomePage() {
                   </svg>
                   Call 419-626-KIDS
                 </Button>
-              </Link>
-              <Link href="/contact">
+              </div>
+              <div>
                 <Button
                   variant="outline"
                   size="lg"
@@ -529,7 +527,7 @@ export default function HomePage() {
                 >
                   Other Contact Options
                 </Button>
-              </Link>
+              </div>
             </div>
           </div>
         </div>

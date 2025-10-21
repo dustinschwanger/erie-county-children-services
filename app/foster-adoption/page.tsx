@@ -1,0 +1,374 @@
+'use client'
+
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { Heart, Home, Users, Phone, FileText, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react'
+import Button from '@/components/ui/Button'
+import Card from '@/components/ui/Card'
+import WaveDivider from '@/components/decorative/WaveDivider'
+
+export default function FosterAdoptionPage() {
+  return (
+    <main>
+      {/* Compact Hero Section */}
+      <section className="relative bg-gradient-to-br from-primary-blue via-primary-blue/90 to-primary-green overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+
+        <div className="container-custom relative pt-12 pb-20 lg:pt-16 lg:pb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+              <Heart className="w-4 h-4 text-white" />
+              <span className="text-white text-sm font-medium">Change a Life Forever</span>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              Become a Foster or Adoptive Parent
+            </h1>
+
+            <p className="text-xl text-blue-50 mb-8 max-w-2xl mx-auto">
+              Open your heart and home to a child in need. Every child deserves a loving, stable family.
+            </p>
+
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="/foster-adoption/interest">
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  icon={<Sparkles className="w-5 h-5" />}
+                >
+                  Express Interest
+                </Button>
+              </Link>
+              <a href="tel:419-627-4484">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="bg-white/10 border-white text-white hover:bg-white hover:text-primary-blue"
+                  icon={<Phone className="w-5 h-5" />}
+                >
+                  419-627-4484
+                </Button>
+              </a>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Wave bottom border */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <WaveDivider color="gray" flip />
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="pt-1 pb-20 bg-gray-50 -mt-1">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-3 gap-12">
+            {/* Left Content Column */}
+            <div className="lg:col-span-2 space-y-12">
+              {/* Foster Care */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Card className="bg-white">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-primary-blue/10 flex items-center justify-center flex-shrink-0">
+                      <Home className="w-7 h-7 text-primary-blue" />
+                    </div>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Foster Care</h2>
+                  </div>
+
+                  <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+                    <p>
+                      Erie County Children Services provides care to children who can last from overnight to more long-term. Foster homes are resources
+                      and supports for children who are removed from their homes due to abuse, neglect, or identified as being dependent and their
+                      parent or guardian is unable to care for them.
+                    </p>
+
+                    {/* Callout Box */}
+                    <div className="bg-primary-blue/5 border-l-4 border-primary-blue rounded-r-lg p-5 my-6">
+                      <p className="font-semibold text-primary-blue mb-2">What Foster Parents Provide:</p>
+                      <p className="text-gray-700">
+                        A loving, secure, caring and safe place for children to live. Children do best when they can stay in their
+                        home school, live in their neighborhood or as close to their birth parents, with priority placed on reunification with biological families.
+                      </p>
+                    </div>
+
+                    <p>
+                      Foster families are a support system and help working with the child's therapists, doctors and school as part of
+                      a team ensuring the child's therapists, parents, and school records are working with the children and birth family.
+                    </p>
+
+                    <p>
+                      Foster parents provide a nurturing, positive environment for the child during a time when they are in crisis, and may need time to heal.
+                    </p>
+                  </div>
+                </Card>
+              </motion.div>
+
+              {/* Adoption */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <Card className="bg-white">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-primary-green/10 flex items-center justify-center flex-shrink-0">
+                      <Heart className="w-7 h-7 text-primary-green" />
+                    </div>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Adoption</h2>
+                  </div>
+
+                  <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+                    <p>
+                      Adoption is a commitment to a child or children who are unable to return to their biological families. Keeping children with
+                      their biological families is always the first goal. Our reunification case plans and support system provides parents with
+                      the best assistance for the child.
+                    </p>
+
+                    {/* Callout Box */}
+                    <div className="bg-primary-green/5 border-l-4 border-primary-green rounded-r-lg p-5 my-6">
+                      <p className="font-semibold text-primary-green mb-2">Adoption Benefits:</p>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start gap-2">
+                          <CheckCircle2 className="w-5 h-5 text-primary-green flex-shrink-0 mt-0.5" />
+                          <span>Eligible for subsidies and medical coverage</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle2 className="w-5 h-5 text-primary-green flex-shrink-0 mt-0.5" />
+                          <span>Comprehensive support throughout the process</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle2 className="w-5 h-5 text-primary-green flex-shrink-0 mt-0.5" />
+                          <span>Children of all ages and backgrounds available</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <p>
+                      Children who cannot return to their biological families need forever families with the same commitment, security and love as your own birth
+                      children. The adoption process provides permanent safe, stable, and loving homes for children in need.
+                    </p>
+
+                    <p>
+                      Through adoption, children become legal members of their new family as if they were born into that family.
+                    </p>
+                  </div>
+                </Card>
+              </motion.div>
+
+              {/* Contact Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <Card className="bg-gradient-to-br from-accent-orange to-accent-orange/90 text-white">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold mb-3">Need More Information?</h3>
+                      <p className="text-white/90 mb-6">
+                        If you would like more information about becoming a foster or adoptive parent, call our foster care specialist at{' '}
+                        <a href="tel:419-627-4484" className="font-bold text-white underline hover:no-underline">
+                          419-627-4484
+                        </a>
+                      </p>
+                      <div className="flex flex-wrap gap-3">
+                        <Link href="/foster-adoption/interest">
+                          <Button
+                            variant="secondary"
+                            icon={<FileText className="w-5 h-5" />}
+                          >
+                            Request Information
+                          </Button>
+                        </Link>
+                        <Link href="/contact?subject=speaker-request">
+                          <Button
+                            variant="outline"
+                            className="border-white text-white hover:bg-white hover:text-accent-orange"
+                            icon={<Users className="w-5 h-5" />}
+                          >
+                            Request a Speaker
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            </div>
+
+            {/* Right Sidebar */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-24 space-y-6">
+                {/* Qualifications */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Card className="bg-gradient-to-br from-primary-green to-primary-green/90 text-white">
+                    <h3 className="text-2xl font-bold mb-6">
+                      Do I Qualify?
+                    </h3>
+
+                    <ul className="space-y-3 mb-8">
+                      {[
+                        '21 years or older',
+                        'Foster care and adoption training',
+                        'Adequate space in your home',
+                        'Able to provide financial and emotional support',
+                        'At least 18 years old (for kinship)',
+                        'Proof of income of at least $1,000',
+                        'Own your home or pay rent on time',
+                        'Renew as homeowner/apartment or pay all home bills',
+                        'Background check (including all in home)',
+                        'Pass home study',
+                        'Work with a social worker after placement',
+                        'Continue training and development',
+                      ].map((item, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-green-200 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm leading-snug">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link href="/foster-adoption/interest" className="block">
+                      <Button
+                        variant="secondary"
+                        size="lg"
+                        className="w-full"
+                        icon={<ArrowRight className="w-5 h-5" />}
+                      >
+                        Get Started Today
+                      </Button>
+                    </Link>
+                  </Card>
+              </motion.div>
+
+              {/* Resources */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <Card className="bg-white">
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">Helpful Resources</h3>
+
+                  <ul className="space-y-3">
+                    <li>
+                      <a
+                        href="tel:419-627-4484"
+                        className="flex items-start gap-3 hover:text-primary-blue transition-colors group"
+                      >
+                        <Phone className="w-4 h-4 flex-shrink-0 mt-1 text-primary-blue" />
+                        <span className="text-sm leading-snug text-gray-700">
+                          Call us for more information: <span className="font-semibold">419-627-4484</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="flex items-center gap-3 hover:text-primary-blue transition-colors text-sm text-gray-700">
+                        <ArrowRight className="w-4 h-4 flex-shrink-0 text-primary-blue" />
+                        PCSA Foster Training
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="flex items-center gap-3 hover:text-primary-blue transition-colors text-sm text-gray-700">
+                        <ArrowRight className="w-4 h-4 flex-shrink-0 text-primary-blue" />
+                        Have Specific Questions
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="flex items-center gap-3 hover:text-primary-blue transition-colors text-sm text-gray-700">
+                        <ArrowRight className="w-4 h-4 flex-shrink-0 text-primary-blue" />
+                        Foster Forms Page
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="flex items-center gap-3 hover:text-primary-blue transition-colors text-sm text-gray-700">
+                        <ArrowRight className="w-4 h-4 flex-shrink-0 text-primary-blue" />
+                        Adoption of Older Children
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="flex items-center gap-3 hover:text-primary-blue transition-colors text-sm text-gray-700">
+                        <ArrowRight className="w-4 h-4 flex-shrink-0 text-primary-blue" />
+                        About US Kids Waiting
+                      </a>
+                    </li>
+                  </ul>
+                </Card>
+              </motion.div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="relative bg-gradient-to-br from-primary-blue via-accent-purple to-primary-green overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+
+        <div className="container-custom relative py-20 lg:py-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+              Ready to Make a Difference?
+            </h2>
+            <p className="text-xl text-blue-50 mb-8">
+              Take the first step toward changing a child's life. Our team is here to guide you through every step of the process.
+            </p>
+
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="/foster-adoption/interest">
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  icon={<Heart className="w-5 h-5" />}
+                >
+                  Express Your Interest
+                </Button>
+              </Link>
+              <a href="tel:419-627-4484">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="bg-white/10 border-white text-white hover:bg-white hover:text-primary-blue"
+                  icon={<Phone className="w-5 h-5" />}
+                >
+                  Call 419-627-4484
+                </Button>
+              </a>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0">
+          <WaveDivider color="dark" flip />
+        </div>
+      </section>
+    </main>
+  )
+}
